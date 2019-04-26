@@ -13,7 +13,7 @@
 # Identifier: (CVE_2018_3620_cpu_kernel|CVE_2018_3620_CPU_KERNEL_NEED_UPDATE,105,kernel_update)
 # Version: 4a790e0e27660f70dab0bf6572968378e5801b48
 - name: Update system to the latest kernel and reboot
-  hosts: "ic[1:4].example.com"
+  hosts: ic1.example.com,ic2.example.com,ic3.example.com,ic4.example.com
   become: true
   vars:
     # determine if we need to update the 'kernel' package or 'kernel-rt' package
@@ -60,7 +60,7 @@
 # Reboots a system if any of the preceeding plays sets the 'insights_needs_reboot' variable to true.
 # The variable can be overridden to suppress this behavior.
 - name: Reboot system (if applicable)
-  hosts: "ic[1:4].example.com"
+  hosts: ic1.example.com,ic2.example.com,ic3.example.com,ic4.example.com
   become: True
   gather_facts: False
   tasks:

@@ -83,11 +83,3 @@
             timeout: 300
           become: false
 
-- name: run insights
-  hosts: ic1.example.com,ic2.example.com,ic3.example.com,ic4.example.com
-  become: True
-  gather_facts: False
-  tasks:
-    - name: run insights
-      command: redhat-access-insights
-      changed_when: false
